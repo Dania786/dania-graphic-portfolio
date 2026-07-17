@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+# Netlify Identity widget needs this redirect so the confirmation/invite
+# links Netlify emails you actually land back on the site correctly.
+[[redirects]]
+  from = "/.netlify/identity"
+  to = "/.netlify/identity"
+  status = 200
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

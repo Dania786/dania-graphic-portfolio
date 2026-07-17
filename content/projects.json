@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "title": "Swift Box",
+      "category": "Logo Design",
+      "cat_key": "logo",
+      "description": "A playful mark for a music streaming brand.",
+      "image": "assets/img/swiftbox-1.jpg",
+      "link": "projects/swiftbox.html",
+      "featured": false,
+      "order": 1
+    },
+    {
+      "title": "Waqar Ahmed Sheikh",
+      "category": "Logo Design",
+      "cat_key": "logo",
+      "description": "A bold monogram mark for a personal brand.",
+      "image": "assets/img/was-1.jpg",
+      "link": "projects/was.html",
+      "featured": false,
+      "order": 2
+    },
+    {
+      "title": "The Daily Sip",
+      "category": "Logo Design",
+      "cat_key": "logo",
+      "description": "A warm, walkable mark for an independent coffee shop.",
+      "image": "assets/img/dailysip-1.jpg",
+      "link": "projects/dailysip.html",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "title": "Nibble & Co.",
+      "category": "Packaging Design",
+      "cat_key": "packaging",
+      "description": "Stand-up pouch packaging for a protein cookie brand.",
+      "image": "assets/img/nibble-1.jpg",
+      "link": "projects/nibble.html",
+      "featured": false,
+      "order": 4
+    },
+    {
+      "title": "Whirl Babywear",
+      "category": "Packaging Design",
+      "cat_key": "packaging",
+      "description": "Luxury unboxing packaging for a designer babywear label.",
+      "image": "assets/img/whirl-1.jpg",
+      "link": "projects/whirl.html",
+      "featured": false,
+      "order": 5
+    },
+    {
+      "title": "Aqua Pure",
+      "category": "Packaging Design",
+      "cat_key": "packaging",
+      "description": "Bottle and label packaging system for a mineral water brand.",
+      "image": "assets/img/aquapure-1.jpg",
+      "link": "projects/aquapure.html",
+      "featured": true,
+      "order": 6
+    },
+    {
+      "title": "Jennifer's Heaven",
+      "category": "Business Card",
+      "cat_key": "business-card",
+      "description": "Letterpress-inspired cards for a floral boutique.",
+      "image": "assets/img/jennifers-1.jpg",
+      "link": "projects/jennifers.html",
+      "featured": false,
+      "order": 7
+    },
+    {
+      "title": "XC Xtra Cheese",
+      "category": "Business Card",
+      "cat_key": "business-card",
+      "description": "Bold red-and-black card for a pizza brand's country manager.",
+      "image": "assets/img/xtracheese-1.jpg",
+      "link": "projects/xtracheese.html",
+      "featured": true,
+      "order": 8
+    },
+    {
+      "title": "INVRE Hang Tags",
+      "category": "Hang Tags",
+      "cat_key": "hangtag",
+      "description": "Two-part hang tag system for a streetwear label.",
+      "image": "assets/img/invre-1.jpg",
+      "link": "projects/invre.html",
+      "featured": false,
+      "order": 9
+    },
+    {
+      "title": "Hoodie Drop Promo",
+      "category": "Social Media Design",
+      "cat_key": "social",
+      "description": "An Instagram promo post for a limited hoodie release.",
+      "image": "assets/img/fashionsale-1.jpg",
+      "link": "projects/fashionsale.html",
+      "featured": false,
+      "order": 10
+    },
+    {
+      "title": "Bleu de Chanel OOH",
+      "category": "Print & Advertising",
+      "cat_key": "print",
+      "description": "A conceptual billboard campaign for a fragrance launch.",
+      "image": "assets/img/chanel-1.jpg",
+      "link": "projects/chanel.html",
+      "featured": false,
+      "order": 11
+    },
+    {
+      "title": "VOLT Streetwear",
+      "category": "Print & Advertising",
+      "cat_key": "print",
+      "description": "Circuit-inspired graphic print for a streetwear drop.",
+      "image": "assets/img/volt-1.jpg",
+      "link": "projects/volt.html",
+      "featured": false,
+      "order": 12
+    }
+  ]
+}

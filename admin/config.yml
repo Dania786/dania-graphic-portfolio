@@ -1,0 +1,192 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Netlify Identity + Git Gateway is Netlify's free, built-in auth + write-access
+# layer for Decap CMS — no paid backend, no server to run. Visitors never see
+# this panel: it isn't linked anywhere on the public site, and Git Gateway only
+# lets people you've explicitly invited via Netlify Identity sign in.
+#
+# One-time setup on Netlify (free), to make login GitHub-only:
+#   1. Site settings → Identity → Enable Identity
+#   2. Identity → Registration → set to "Invite only"
+#   3. Identity → External providers → enable "GitHub" (this is what lets you
+#      click "Log in with GitHub" on the /admin screen instead of a password)
+#   4. Identity → Emails → optional: turn off email/password signup entirely
+#      so GitHub is the only sign-in method
+#   5. Identity → Services → Git Gateway → Enable
+#   6. Identity tab → Invite users → invite your own GitHub email address
+# After this, only your invited GitHub account can ever log in at /admin/ —
+# anyone else who finds the URL just sees a login screen with no way in.
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "projects"
+    label: "Portfolio Projects"
+    label_singular: "Project"
+    description: "Everything shown in the portfolio grid on the homepage. Reordering, adding, deleting, or editing here updates the live site automatically — no HTML editing needed."
+    files:
+      - name: "grid"
+        label: "Portfolio Grid"
+        file: "content/projects.json"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.order}} — {{fields.title}} ({{fields.category}})"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Logo Design", "Packaging Design", "Business Card", "Hang Tags", "Social Media Design", "Print & Advertising"]
+              - label: "Filter Key"
+                name: "cat_key"
+                widget: "select"
+                hint: "Controls which filter button shows this project — must match Category above."
+                options:
+                  - { label: "Logo Design", value: "logo" }
+                  - { label: "Packaging Design", value: "packaging" }
+                  - { label: "Business Card", value: "business-card" }
+                  - { label: "Hang Tags", value: "hangtag" }
+                  - { label: "Social Media Design", value: "social" }
+                  - { label: "Print & Advertising", value: "print" }
+              - { label: "Short Description", name: "description", widget: "string" }
+              - { label: "Cover / Thumbnail Image", name: "image", widget: "image" }
+              - label: "Case Study Page"
+                name: "link"
+                widget: "string"
+                hint: "Relative path to the project's HTML page, e.g. projects/my-project.html. Creating a brand-new case study page still needs a one-off request — this field just points to it."
+              - { label: "Featured", name: "featured", widget: "boolean", default: false }
+              - { label: "Display Order", name: "order", widget: "number", value_type: "int" }
+
+  # ================================================================
+  # INTERNAL CLIENT TOOLKIT -- visible only inside this logged-in CMS.
+  # Nothing on the public site (index.html, /projects/*) ever reads
+  # from content/internal/, so none of this is exposed to visitors --
+  # it exists purely as your own git-backed project workspace.
+  # ================================================================
+
+  - name: "internal_projects"
+    label: "Toolkit - Project Manager"
+    label_singular: "Project"
+    description: "Your private project tracker - one entry per client engagement, current status, and internal notes."
+    folder: "content/internal/projects"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{status}} ({{client}})"
+    fields:
+      - { label: "Project / Client Name", name: "title", widget: "string" }
+      - { label: "Client", name: "client", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["Inquiry", "In Progress", "Awaiting Client Feedback", "Revisions", "Completed", "On Hold"]
+        default: "Inquiry"
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options: ["Low", "Normal", "High"]
+        default: "Normal"
+      - { label: "Start Date", name: "start_date", widget: "datetime", required: false }
+      - { label: "Due Date", name: "due_date", widget: "datetime", required: false }
+      - { label: "Budget / Notes (private)", name: "body", widget: "markdown", required: false }
+
+  - name: "internal_deliverables"
+    label: "Toolkit - Client Deliverables"
+    label_singular: "Deliverable"
+    description: "Track what's been sent to each client, and its approval status."
+    folder: "content/internal/deliverables"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{status}}"
+    fields:
+      - { label: "Deliverable Title", name: "title", widget: "string" }
+      - { label: "Related Project / Client", name: "project", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["Draft", "Sent for Review", "Approved", "Needs Revision"]
+        default: "Draft"
+      - { label: "Date Sent", name: "date_sent", widget: "datetime", required: false }
+      - label: "File"
+        name: "file"
+        widget: "file"
+        media_folder: "/content/internal/files"
+        public_folder: "/content/internal/files"
+        required: false
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
+
+  - name: "internal_versions"
+    label: "Toolkit - Version Notes"
+    label_singular: "Version Entry"
+    description: "A running changelog per project - what changed between revisions."
+    folder: "content/internal/versions"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{project}} - {{version_label}}"
+    fields:
+      - { label: "Related Project / Client", name: "project", widget: "string" }
+      - { label: "Version Label", name: "version_label", widget: "string", hint: "e.g. v1, v2 - Revision 1" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "What Changed", name: "body", widget: "markdown" }
+
+  - name: "internal_brand_assets"
+    label: "Toolkit - Brand Assets"
+    label_singular: "Brand Asset"
+    description: "Logos, palettes, type specimens, and guideline files gathered per client - separate from the public portfolio images."
+    folder: "content/internal/brand-assets"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{asset_type}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Related Project / Client", name: "project", widget: "string" }
+      - label: "Asset Type"
+        name: "asset_type"
+        widget: "select"
+        options: ["Logo", "Color Palette", "Typography", "Brand Guidelines", "Mockup", "Other"]
+      - label: "File"
+        name: "file"
+        widget: "file"
+        media_folder: "/content/internal/files"
+        public_folder: "/content/internal/files"
+        required: false
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
+
+  - name: "internal_references"
+    label: "Toolkit - References"
+    label_singular: "Reference"
+    description: "Inspiration links, competitor research, and reference material - private, not part of any client page."
+    folder: "content/internal/references"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
+
+  - name: "internal_working_files"
+    label: "Toolkit - Working Files"
+    label_singular: "Working File"
+    description: "Source files (.ai/.psd/.fig links, exports-in-progress) per project. For large source files, storing a cloud-drive link here keeps the git repo lightweight - Git isn't built for huge binaries."
+    folder: "content/internal/working-files"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{project}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Related Project / Client", name: "project", widget: "string" }
+      - { label: "External Link (Drive / Dropbox / Figma)", name: "external_link", widget: "string", required: false }
+      - label: "Small File (under a few MB)"
+        name: "file"
+        widget: "file"
+        media_folder: "/content/internal/files"
+        public_folder: "/content/internal/files"
+        required: false
+      - { label: "Version", name: "version", widget: "string", required: false }
+      - { label: "Notes", name: "body", widget: "markdown", required: false }
