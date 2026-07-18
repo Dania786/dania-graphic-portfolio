@@ -957,6 +957,7 @@
     },
     {
       "timeline": "2 Business Days",
+      "coverImage": "/assets/img/hopefully-completed-o111_.png",
       "slug": "fraris-luxury-fragrance-packaging",
       "featured": false,
       "personality": [
@@ -965,9 +966,8 @@
         "Mysterious",
         "Minimalist"
       ],
-      "mockups": [
-        {}
-      ],
+      "order": 1,
+      "mockups": [],
       "typography": [
         {
           "font_name": "Cormorant Garamond",
