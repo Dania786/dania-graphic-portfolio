@@ -2,123 +2,958 @@
   "items": [
     {
       "title": "Swift Box",
+      "slug": "swiftbox",
       "category": "Logo Design",
-      "cat_key": "logo",
       "description": "A playful mark for a music streaming brand.",
-      "image": "assets/img/swiftbox-1.jpg",
-      "link": "projects/swiftbox.html",
+      "brief": "The brand wanted a friendly, energetic mark that would work as a small app icon first, and everything else second, in a bold red that could stand out on a crowded home screen.",
+      "overview": "Swift Box needed a mark that explained its own name — music that arrives like a delivery, unboxed the moment you open the app.",
+      "goal": "The challenge was combining two ideas — a box and music — without the logo turning into a cluttered illustration once it was scaled down to icon size.",
+      "outcome": "The mark now appears across the app interface, the website, and embroidered merchandise — recognisable at every size from a favicon to a sweatshirt.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "Early sketches tried a speaker inside a box, a play button as a box flap, and a few other combinations before landing on the simplest version: an open box with two musical notes floating out of it, like sound escaping a package the moment it's opened."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The final logo is a bold, rounded box mark in a single confident red, with two notes rising from the open flaps. It's simple enough to read at 32 pixels and bold enough to anchor a full website header."
+        }
+      ],
+      "personality": [
+        "Energetic",
+        "Friendly",
+        "Fast",
+        "Modern"
+      ],
+      "tools": [
+        "Illustrator",
+        "Figma"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/swiftbox-1.png",
+      "coverAlt": "Swift Box logo applied to embroidered apparel, phone screen and website",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Swift Red",
+          "hex": "#E8291C"
+        },
+        {
+          "label": "Ink",
+          "hex": "#1A1A1A"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/swiftbox-1.png",
+          "alt": "Swift Box logo on embroidered sweatshirt, phone app screen and website header"
+        }
+      ],
+      "client": "Swift Box",
+      "service": "Logo Design",
+      "timeline": "4 Business Days",
       "featured": false,
-      "order": 1
+      "order": 1,
+      "gallery": [],
+      "link": "projects/swiftbox.html"
     },
     {
-      "title": "Waqar Ahmed Sheikh",
+      "title": "WAS Monogram",
+      "slug": "was",
       "category": "Logo Design",
-      "cat_key": "logo",
       "description": "A bold monogram mark for a personal brand.",
-      "image": "assets/img/was-1.jpg",
-      "link": "projects/was.html",
+      "brief": "The brief asked for a monogram built from the initials W, A, and S that felt architectural rather than decorative, designed specifically to be embossed, engraved, or foiled onto black surfaces.",
+      "overview": "This project called for a personal brand identity strong enough to stand alone as a mark of quality — no tagline needed, no explanation required.",
+      "goal": "The challenge was legibility: three interlocking letterforms had to remain readable as W-A-S even when reduced to the size of a mug handle or a fabric patch, without collapsing into an abstract shape.",
+      "outcome": "The monogram now anchors a full personal brand suite — signage, business cards, a mug, a shopping bag, and an embroidered mark — all built around one confident, letter-driven symbol.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the mark on a diamond frame, using the vertical strokes of the W and A to double as the uprights of the S, so the three letters share weight rather than compete for space. Every version was tested in flat black-on-black embossing before anything was finalised."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The result is a diamond-framed monogram in brushed silver, paired with a clean wordmark set below it. The geometry holds up whether it's foil-stamped on a card, engraved into a mug, or debossed into fabric."
+        }
+      ],
+      "personality": [
+        "Premium",
+        "Sharp",
+        "Confident",
+        "Understated"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/was-1.png",
+      "coverAlt": "WAS monogram brand identity applied to signage, packaging, business cards and merchandise",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Onyx",
+          "hex": "#0B0B0B"
+        },
+        {
+          "label": "Charcoal",
+          "hex": "#1A1A1A"
+        },
+        {
+          "label": "Brushed Silver",
+          "hex": "#C7C9CC"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/was-1.png",
+          "alt": "WAS monogram applied across signage, shopping bag, business card, mug and embroidered patch"
+        }
+      ],
+      "client": "Waqar Ahmed Sheikh",
+      "service": "Logo Design",
+      "timeline": "10 Days",
       "featured": false,
-      "order": 2
+      "order": 2,
+      "gallery": [],
+      "link": "projects/was.html"
     },
     {
       "title": "The Daily Sip",
+      "slug": "dailysip",
       "category": "Logo Design",
-      "cat_key": "logo",
       "description": "A warm, walkable mark for an independent coffee shop.",
-      "image": "assets/img/dailysip-1.jpg",
-      "link": "projects/dailysip.html",
+      "brief": "The owners wanted something warm and approachable rather than trendy or minimal — a brand that felt like it had been on the corner for years, even on day one. The mark needed to work in a single colour for embossing and packaging print runs.",
+      "overview": "The Daily Sip needed an identity that could live comfortably on a hanging shop sign, a takeaway cup, and a barista's apron — three very different surfaces that all had to feel like the same brand at a glance.",
+      "goal": "The main challenge was building a mark simple enough to reduce to a single-colour window decal, but detailed enough to still read as a cup of coffee at a glance — no abstraction that would confuse first-time customers.",
+      "outcome": "The finished system covers signage, cups, kraft packaging, business cards, an apron mark, and a ceramic mug application — a full identity that reads consistently whether it's seen from across the street or across a table.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I started from the ritual itself: steam rising off a cup, a coffee bean split in half like a heart. Sketches explored a dozen ways to combine a cup silhouette with a bean, testing each at sign-size and at business-card-size to make sure detail wasn't lost either way."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The final mark pairs a rounded cup with a heart-shaped bean nested inside it, topped with three curling steam lines. It's warm without being twee, and reduces cleanly to a single colour for embossing, window decals, and apron embroidery."
+        }
+      ],
+      "personality": [
+        "Warm",
+        "Welcoming",
+        "Handcrafted",
+        "Everyday Ritual"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/dailysip-1.png",
+      "coverAlt": "The Daily Sip brand identity applied across signage, cups, packaging and apparel",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Espresso",
+          "hex": "#3B2417"
+        },
+        {
+          "label": "Roast",
+          "hex": "#8A5A3B"
+        },
+        {
+          "label": "Latte",
+          "hex": "#C9AE8C"
+        },
+        {
+          "label": "Cream",
+          "hex": "#F6EFE4"
+        },
+        {
+          "label": "Ink",
+          "hex": "#1B1B1B"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/dailysip-1.png",
+          "alt": "The Daily Sip applied across shop signage, packaging, apparel and cups"
+        }
+      ],
+      "client": "The Daily Sip Coffee Co.",
+      "service": "Logo Design",
+      "timeline": "2 Weeks",
       "featured": false,
-      "order": 3
+      "order": 3,
+      "gallery": [],
+      "link": "projects/dailysip.html"
     },
     {
       "title": "Nibble & Co.",
+      "slug": "nibble",
       "category": "Packaging Design",
-      "cat_key": "packaging",
       "description": "Stand-up pouch packaging for a protein cookie brand.",
-      "image": "assets/img/nibble-1.jpg",
-      "link": "projects/nibble.html",
+      "brief": "The brief called for a bold, high-contrast pack for the chocolate flavour and a softer, warmer pack for peanut butter, unified by the same logo, layout, and nutrition panel so the range reads as one brand.",
+      "overview": "Nibble & Co. makes real-food protein cookies and needed packaging that could hold its own against gym-shelf staples while still looking like something worth snacking on.",
+      "goal": "The challenge was designing a system, not just a single pack — one flexible template that could take on a new colourway per flavour without needing to be redesigned each time.",
+      "outcome": "The finished system gives Nibble & Co. a scalable packaging template ready for future flavours, with a nutrition panel and brand story block that stays consistent across the whole range.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the front panel around three fixed zones — logo, protein callout, and product illustration — then tested how far the palette could shift before the pack stopped feeling like Nibble & Co. The illustrated hand-holding-a-cookie motif stayed constant across every version to anchor the range."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The chocolate flavour uses a matte black bag with acid-yellow accents for shelf punch, while peanut butter shifts to a warm tan bag with a deep blue accent — same layout, same voice, different personality per flavour."
+        }
+      ],
+      "personality": [
+        "Bold",
+        "Honest",
+        "No-Nonsense",
+        "Energising"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/nibble-1.png",
+      "coverAlt": "Nibble and Co protein cookie packaging in chocolate and peanut butter flavours",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Black",
+          "hex": "#1C1C1C"
+        },
+        {
+          "label": "Acid Yellow",
+          "hex": "#D4E157"
+        },
+        {
+          "label": "Warm Tan",
+          "hex": "#E4C9A0"
+        },
+        {
+          "label": "Peanut Blue",
+          "hex": "#1E4FA3"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/nibble-1.png",
+          "alt": "Nibble and Co chocolate protein cookie packaging, front and back"
+        },
+        {
+          "image": "assets/img/nibble-2.png",
+          "alt": "Nibble and Co peanut butter protein cookie packaging, front and back"
+        }
+      ],
+      "client": "Nibble & Co.",
+      "service": "Packaging Design",
+      "timeline": "6 Business Days",
       "featured": false,
-      "order": 4
+      "order": 4,
+      "gallery": [],
+      "link": "projects/nibble.html"
     },
     {
       "title": "Whirl Babywear",
+      "slug": "whirl",
       "category": "Packaging Design",
-      "cat_key": "packaging",
       "description": "Luxury unboxing packaging for a designer babywear label.",
-      "image": "assets/img/whirl-1.jpg",
-      "link": "projects/whirl.html",
+      "brief": "The brand wanted a rich, gender-neutral palette that avoided the usual pastel baby-brand clichés, with a repeatable pattern of small motifs — stars, clouds, hearts — that felt playful without looking childish.",
+      "overview": "Whirl sells designer baby clothing as gifts as much as garments, so the packaging needed to carry the same weight as the product inside it.",
+      "goal": "The main challenge was making a deep purple and gold palette feel appropriate for a baby brand rather than a luxury fashion label for adults, while still signalling premium quality.",
+      "outcome": "The packaging suite — shopping bag and gift box — now gives Whirl an unboxing experience that matches the price point of what's inside, reinforcing the brand's position as a gifting-first label.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I tested the debossed pattern of stars, clouds, teddy bears, and hearts at several densities before settling on a scattered, low-contrast version that reads as texture from a distance and detail up close — enough to reward someone who takes a second look."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The final system uses a deep aubergine purple with gold foil for the wordmark, a debossed icon pattern across every surface, and tissue paper lining inside the box to complete the unboxing moment."
+        }
+      ],
+      "personality": [
+        "Luxurious",
+        "Gentle",
+        "Gift-Worthy",
+        "Timeless"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/whirl-1.png",
+      "coverAlt": "Whirl designer babywear luxury purple shopping bag with gold foil logo",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Aubergine",
+          "hex": "#3B1F5C"
+        },
+        {
+          "label": "Gold Foil",
+          "hex": "#C9A24B"
+        },
+        {
+          "label": "Tissue Cream",
+          "hex": "#F4EFE6"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/whirl-1.png",
+          "alt": "Whirl designer babywear shopping bag with gold rope handles"
+        },
+        {
+          "image": "assets/img/whirl-2.png",
+          "alt": "Whirl designer babywear gift box open with tissue paper lining"
+        }
+      ],
+      "client": "Whirl Designer Babywear",
+      "service": "Packaging Design",
+      "timeline": "1 Week",
       "featured": false,
-      "order": 5
+      "order": 5,
+      "gallery": [],
+      "link": "projects/whirl.html"
     },
     {
       "title": "Aqua Pure",
+      "slug": "aquapure",
       "category": "Packaging Design",
-      "cat_key": "packaging",
       "description": "Bottle and label packaging system for a mineral water brand.",
-      "image": "assets/img/aquapure-1.jpg",
-      "link": "projects/aquapure.html",
+      "brief": "The brief asked for a droplet-led mark, a clean wave motif, and mandatory compliance icons — halal certification, recycling, and responsible disposal — integrated without cluttering the label.",
+      "overview": "Aqua Pure needed a label and full bottle packaging that communicates one thing instantly — purity — without leaning on the generic blue-wave clichés that crowd the bottled water aisle.",
+      "goal": "The challenge was designing one label that had to work twice over: flat and legible as printed artwork, and still clear and trustworthy once wrapped around a curved, semi-transparent bottle in real-world lighting.",
+      "outcome": "The bottle and label now work as one packaging system — legible on the printed sheet, convincing on the shelf, and immediately readable as a clean, certified, trustworthy product.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I designed the label flat first — droplet mark, wordmark, and certification icons — then mocked it onto the bottle in Photoshop against a natural rock-and-water setting to pressure-test legibility and colour under realistic conditions."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The finished label uses a single blue droplet rising out of a horizontal wave, with the wordmark set directly into the water line so the whole mark reads as one continuous motion rather than a badge sitting on top of a background."
+        }
+      ],
+      "personality": [
+        "Pure",
+        "Refreshing",
+        "Trustworthy",
+        "Clean"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/aquapure-1.png",
+      "coverAlt": "Aqua Pure mineral water bottle mockup on wet rock with waterfall background",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Deep Blue",
+          "hex": "#0D47A1"
+        },
+        {
+          "label": "Aqua",
+          "hex": "#4FC3F7"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/aquapure-3.jpg",
+          "alt": "Photoshop workspace showing the Aqua Pure bottle mockup being composited"
+        },
+        {
+          "image": "assets/img/aquapure-2.jpg",
+          "alt": "Aqua Pure mineral water bottle mockup, alternate crop on wet rock with waterfall background"
+        }
+      ],
+      "client": "Aqua Pure",
+      "service": "Packaging Design",
+      "timeline": "4 Business Days",
       "featured": true,
-      "order": 6
+      "order": 6,
+      "gallery": [],
+      "link": "projects/aquapure.html"
     },
     {
       "title": "Jennifer's Heaven",
+      "slug": "jennifers",
       "category": "Business Card",
-      "cat_key": "business-card",
       "description": "Letterpress-inspired cards for a floral boutique.",
-      "image": "assets/img/jennifers-1.jpg",
-      "link": "projects/jennifers.html",
+      "brief": "The brief asked for a card that used a single illustrated peony as its signature element, paired with warm gold detailing and enough restraint to feel expensive rather than busy.",
+      "overview": "Jennifer's Heaven creates bespoke floral arrangements, and the business card needed to feel as considered as one of their arrangements — quiet, detailed, and a little indulgent.",
+      "goal": "The challenge was making a two-colour card — cream and gold, gold and cream — feel like two distinct experiences rather than a simple colour swap, so both sides earned their place.",
+      "outcome": "The finished cards give Jennifer's Heaven a tactile, giftable first impression that matches the quality of their arrangements — something a client keeps rather than discards.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I hand-drew the peony illustration first, then built the card layout around it, testing the flower at different scales and positions until it anchored the corner of the card without overpowering the contact details."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The front card uses a cream base with a gold foil accent bar and fine gold linework, while the reverse flips the palette entirely — a solid gold card with the peony reversed out in cream — giving the set a light and dark version of the same idea."
+        }
+      ],
+      "personality": [
+        "Elegant",
+        "Bespoke",
+        "Warm",
+        "Detailed"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/jennifers-1.png",
+      "coverAlt": "Jennifer's Heaven Floral Boutique letterpress business card in cream and gold",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Ivory",
+          "hex": "#F4EFE4"
+        },
+        {
+          "label": "Gold",
+          "hex": "#C9A24B"
+        },
+        {
+          "label": "Ink Brown",
+          "hex": "#2B2118"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/jennifers-1.png",
+          "alt": "Jennifer's Heaven business card front and back on marble surface"
+        }
+      ],
+      "client": "Jennifer's Heaven Floral Boutique",
+      "service": "Business Card Design",
+      "timeline": "2 Business Days",
       "featured": false,
-      "order": 7
+      "order": 7,
+      "gallery": [],
+      "link": "projects/jennifers.html"
     },
     {
       "title": "XC Xtra Cheese",
+      "slug": "xtracheese",
       "category": "Business Card",
-      "cat_key": "business-card",
       "description": "Bold red-and-black card for a pizza brand's country manager.",
-      "image": "assets/img/xtracheese-1.jpg",
-      "link": "projects/xtracheese.html",
+      "brief": "The brief called for a high-contrast, red-and-black identity built around the brand's \"XC\" mark, with a hero product shot of a cheese-pull slice doing the appetite appeal, and full contact details for a country manager role.",
+      "overview": "XC Xtra Cheese needed a card for their country manager that could travel — one that reads instantly as food-brand energy without slipping into cliché takeaway-menu territory.",
+      "goal": "The challenge was balancing craveable food photography with a card that still reads as corporate and trustworthy — a country manager hands this to partners and vendors, not just customers.",
+      "outcome": "The finished card gives XC Xtra Cheese a piece of print collateral their country manager can hand over anywhere — vendor meetings included — without it feeling like a takeaway flyer.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the geometry first in Illustrator — the diagonal red band and hexagon frame — before dropping in the product photography, so the composition would hold up even before a single image was placed."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The front pairs a hexagon-framed cheese-pull photo with a bold diagonal red stripe and the XC roundel mark; the back strips everything back to the mark alone on black, so the set reads as one confident, appetite-forward system front to back."
+        }
+      ],
+      "personality": [
+        "Bold",
+        "Appetising",
+        "Confident",
+        "Direct"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/xtracheese-1.png",
+      "coverAlt": "XC Xtra Cheese business card front and back in red, black and gold on a dark surface",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Black",
+          "hex": "#0A0A0A"
+        },
+        {
+          "label": "Xtra Red",
+          "hex": "#C81E1E"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/xtracheese-2.jpg",
+          "alt": "Illustrator workspace showing the XC Xtra Cheese business card layout in progress"
+        }
+      ],
+      "client": "XC Xtra Cheese",
+      "service": "Business Card Design",
+      "timeline": "2 Business Days",
       "featured": true,
-      "order": 8
+      "order": 8,
+      "gallery": [],
+      "link": "projects/xtracheese.html"
     },
     {
       "title": "INVRE Hang Tags",
+      "slug": "invre",
       "category": "Hang Tags",
-      "cat_key": "hangtag",
       "description": "Two-part hang tag system for a streetwear label.",
-      "image": "assets/img/invre-1.jpg",
-      "link": "projects/invre.html",
+      "brief": "The brand wanted a bold, chunky wordmark that read well even folded over on a hanger, plus a functional back panel covering size, colour, fabric, price, and a barcode.",
+      "overview": "INVRE needed a hang tag that did double duty — front-facing brand statement on one side, full product information on the other — without feeling like two unrelated designs stitched together.",
+      "goal": "The challenge was fitting five separate pieces of product information onto a tag small enough to hang comfortably from a drawstring, without the back panel feeling cramped or the front losing its punch.",
+      "outcome": "The tag system is now used across INVRE's hoodie line, giving the brand a consistent, production-ready hang tag that balances shelf presence with practical product information.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the wordmark first as a heavy, interlocking sans-serif that could anchor the front panel on its own, then laid the back panel out in a strict grid — size selector, colour, description, price, and barcode each get their own clearly separated row."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The finished tag pairs a bold navy-and-yellow front mark with a clean, information-dense back panel, connected by a continuous colour block that runs down the spine of both sides so the two halves read as one object."
+        }
+      ],
+      "personality": [
+        "Bold",
+        "Utilitarian",
+        "Streetwise",
+        "Direct"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/invre-1.png",
+      "coverAlt": "INVRE hang tag on white hoodie, navy and yellow two-part tag design",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Navy",
+          "hex": "#12213B"
+        },
+        {
+          "label": "Signal Yellow",
+          "hex": "#F4B400"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/invre-1.png",
+          "alt": "INVRE hang tag attached to a white hoodie on a hanger"
+        },
+        {
+          "image": "assets/img/invre-2.png",
+          "alt": "INVRE hang tag layout in Adobe Illustrator showing front and back panels"
+        }
+      ],
+      "client": "INVRE",
+      "service": "Hang Tags",
+      "timeline": "3 Business Days",
       "featured": false,
-      "order": 9
+      "order": 9,
+      "gallery": [],
+      "link": "projects/invre.html"
     },
     {
       "title": "Hoodie Drop Promo",
+      "slug": "fashionsale",
       "category": "Social Media Design",
-      "cat_key": "social",
       "description": "An Instagram promo post for a limited hoodie release.",
-      "image": "assets/img/fashionsale-1.jpg",
-      "link": "projects/fashionsale.html",
+      "brief": "The brief called for a moody, high-contrast composition built entirely around the product shot, with a price tag treated as a visible design element rather than hidden in a caption.",
+      "overview": "This post needed to do one job — stop the scroll and communicate 'limited stock' — for a single hoodie drop promoted through an Instagram feed post.",
+      "goal": "The challenge was creating urgency without loud sale-banner clichés — no starburst graphics, no percentage-off badges, just tension built through scale, type, and a stock counter.",
+      "outcome": "The post format is now reusable as a template for future single-product drops, keeping the brand's feed consistent without needing a full redesign each time.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I oversized the word 'HOODIE' behind the headline to create depth, then layered a smaller, more confident 'NEW ARRIVAL' lockup on top, keeping the product shot untouched and letting the darkness of the background do the framing."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The final post centres the hoodie against pure black, with a hanging price tag, a 'Limited Stock' seal, and a bottom call-to-action bar carrying the Instagram handle — built to be legible even as a small feed thumbnail."
+        }
+      ],
+      "personality": [
+        "Moody",
+        "Urgent",
+        "Minimal",
+        "Confident"
+      ],
+      "tools": [
+        "Photoshop",
+        "Illustrator"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/fashionsale-1.png",
+      "coverAlt": "New arrival hoodie Instagram promotional post with limited stock badge",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Black",
+          "hex": "#0A0A0A"
+        },
+        {
+          "label": "Smoke Grey",
+          "hex": "#5C5C5C"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/fashionsale-1.png",
+          "alt": "New arrival hoodie Instagram post with limited stock badge and order now button"
+        }
+      ],
+      "client": "Fashion Sale Instagram Campaign",
+      "service": "Social Media Design",
+      "timeline": "2 Business Days",
       "featured": false,
-      "order": 10
+      "order": 10,
+      "gallery": [],
+      "link": "projects/fashionsale.html"
     },
     {
       "title": "Bleu de Chanel OOH",
+      "slug": "chanel",
       "category": "Print & Advertising",
-      "cat_key": "print",
       "description": "A conceptual billboard campaign for a fragrance launch.",
-      "image": "assets/img/chanel-1.jpg",
-      "link": "projects/chanel.html",
+      "brief": "The concept centred on 'timeless elegance' — a tagline built around confidence rather than ingredients, translated into a scene that felt cinematic rather than catalogue-like.",
+      "overview": "This self-directed project explored what a large-format fragrance advertisement could look like at night, when a billboard has to compete with a city's own lighting rather than daylight.",
+      "goal": "The challenge was making the bottle feel like it belonged inside the scene, not pasted on top of it — the light, shadow, and reflections all needed to behave as if the product were physically there.",
+      "outcome": "The final composite demonstrates large-format advertising thinking end-to-end — concept, lighting, composition, and mockup — presented as a believable storefront installation.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the composition around a mountain silhouette and a glowing moon, wrapping a single ribbon of neon light around the bottle to tie the product to the landscape. Two lighting passes were produced — a deep midnight version and a softer dusk version — to compare mood."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The final billboard sits the bottle at the centre of a neon-lit night scene, with the ribbon of colour connecting the cap to the base like a signature. Mounted on a mock storefront, it reads instantly even from across a busy street."
+        }
+      ],
+      "personality": [
+        "Cinematic",
+        "Confident",
+        "Timeless",
+        "Bold"
+      ],
+      "tools": [
+        "Photoshop",
+        "Illustrator"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/chanel-1.png",
+      "coverAlt": "Bleu de Chanel billboard advertisement glowing at night in a city street",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Midnight",
+          "hex": "#0D0B1E"
+        },
+        {
+          "label": "Neon Violet",
+          "hex": "#7B2FF7"
+        },
+        {
+          "label": "Warm Gold",
+          "hex": "#F4C542"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/chanel-1.png",
+          "alt": "Bleu de Chanel billboard at night, deep midnight lighting version"
+        },
+        {
+          "image": "assets/img/chanel-2.png",
+          "alt": "Bleu de Chanel billboard at night, alternate lighting version"
+        }
+      ],
+      "client": "Conceptual Project",
+      "service": "Print & Advertising",
+      "timeline": "5 Business Days",
       "featured": false,
-      "order": 11
+      "order": 11,
+      "gallery": [],
+      "link": "projects/chanel.html"
     },
     {
       "title": "VOLT Streetwear",
+      "slug": "volt",
       "category": "Print & Advertising",
-      "cat_key": "print",
       "description": "Circuit-inspired graphic print for a streetwear drop.",
-      "image": "assets/img/volt-1.jpg",
-      "link": "projects/volt.html",
+      "brief": "The brief asked for a front-of-shirt graphic combining circuit-board linework with bold, glitch-adjacent typography, designed to sit on an oversized, washed-black tee.",
+      "overview": "VOLT's 'Offline Error' capsule needed a print that looked like a screen glitch translated onto fabric — technical, slightly chaotic, but still wearable.",
+      "goal": "The challenge was keeping a dense, technical illustration legible on fabric at actual wearing distance, where fine linework can disappear into the weave of a garment.",
+      "outcome": "The print now runs across VOLT's capsule collection, tested on-body across two fit styles to confirm the graphic holds up in motion, not just on a flat mockup.",
+      "process": [
+        {
+          "step_title": "Research & Process",
+          "step_text": "I built the circuit pattern in modular sections, thickened every line beyond what would normally be needed on paper, and tested the print at actual garment scale before finalising placement around the type."
+        },
+        {
+          "step_title": "The Solution",
+          "step_text": "The finished print spreads asymmetric circuit paths across the chest, broken by bold 'OFFLINE ERROR' and 'SYSTEM FAILURE' lockups in acid green and white, with the VOLT wordmark anchoring the bottom right."
+        }
+      ],
+      "personality": [
+        "Technical",
+        "Rebellious",
+        "Urban",
+        "Loud"
+      ],
+      "tools": [
+        "Illustrator",
+        "Photoshop"
+      ],
+      "deliverables": [
+        "Brand Presentation",
+        "Brand Guidelines",
+        "Project Overview",
+        "Final Deliverables"
+      ],
+      "coverImage": "assets/img/volt-1.png",
+      "coverAlt": "VOLT streetwear t-shirt with circuit board graphic print and system failure typography",
+      "logo": "",
+      "colors": [
+        {
+          "label": "Washed Black",
+          "hex": "#1B1B1B"
+        },
+        {
+          "label": "Circuit Green",
+          "hex": "#8BC34A"
+        },
+        {
+          "label": "White",
+          "hex": "#FFFFFF"
+        }
+      ],
+      "typography": [
+        {
+          "font_name": "Poppins",
+          "role": "Display"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Body / Text"
+        }
+      ],
+      "mockups": [
+        {
+          "image": "assets/img/volt-1.png",
+          "alt": "VOLT t-shirt flat lay showing full circuit board graphic print"
+        },
+        {
+          "image": "assets/img/volt-2.png",
+          "alt": "VOLT t-shirt worn by two models in outdoor settings"
+        }
+      ],
+      "client": "VOLT",
+      "service": "Print & Advertising",
+      "timeline": "4 Business Days",
       "featured": false,
-      "order": 12
+      "order": 12,
+      "gallery": [],
+      "link": "projects/volt.html"
     }
   ]
 }

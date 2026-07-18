@@ -115,8 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   bars.forEach(b => barIo.observe(b));
 
-  // ============ Portfolio grid: render from content/projects.json (CMS-editable) ============
+  // ============ Portfolio grid + category filters: render entirely from
+  // content/projects.json (CMS-editable). Categories are NOT a fixed list
+  // anywhere in the code — they're derived from whatever "category" text
+  // exists on each project. So in the CMS: typing a new category on a
+  // project creates it, editing the text renames it everywhere that
+  // project appears, and no project using a category left makes it
+  // disappear from the filter bar automatically. Zero HTML edits, ever. ============
   const grid = document.getElementById('portfolio-grid');
+  const filterBar = document.getElementById('portfolio-filters');
+  const slugify = (str) => String(str || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const projectHref = (p) => p.link ? p.link : `case-study.html?p=${encodeURIComponent(p.slug)}`;
+
   if (grid) {
     fetch('content/projects.json')
       .then(res => { if (!res.ok) throw new Error('no CMS data'); return res.json(); })
@@ -124,9 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const projects = Array.isArray(data) ? data : data.items;
         if (!Array.isArray(projects) || !projects.length) return;
         const sorted = projects.slice().sort((a, b) => (a.order || 0) - (b.order || 0));
+
+        if (filterBar) {
+          const seen = new Map(); // catKey -> label, in first-seen order
+          sorted.forEach(p => { if (p.category) seen.set(slugify(p.category), p.category); });
+          const pills = [`<button class="filter-btn active" data-filter="all">All Work</button>`]
+            .concat(Array.from(seen, ([key, label]) => `<button class="filter-btn" data-filter="${key}">${label}</button>`));
+          filterBar.innerHTML = pills.join('');
+        }
+
         grid.innerHTML = sorted.map((p, i) => `
-          <a href="${p.link}" class="p-card reveal" data-cat="${p.cat_key}" style="--i:${i % 6}">
-            <div class="thumb img-reveal"><img src="${p.image}" alt="${(p.title + ' — ' + p.category).replace(/"/g, '&quot;')}" loading="lazy"></div>
+          <a href="${projectHref(p)}" class="p-card reveal" data-cat="${slugify(p.category)}" style="--i:${i % 6}">
+            <div class="thumb img-reveal"><img src="${p.coverImage}" alt="${(p.title + ' — ' + p.category).replace(/"/g, '&quot;')}" loading="lazy"></div>
             <div class="info"><span class="tag">${p.category}${p.featured ? ' · Featured' : ''}</span><h3>${p.title}</h3><p>${p.description}</p></div>
             <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
           </a>`).join('');
@@ -151,30 +170,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.p-card.reveal').forEach(el => io.observe(el));
 
     // ============ Portfolio filter (with soft fade/scale transition) ============
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.p-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.dataset.filter;
+    // Delegated on the filter bar itself since the pills are rebuilt dynamically.
+    const filterHost = filterBar || document;
+    filterHost.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      filterHost.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+      const cards = document.querySelectorAll('.p-card');
 
-        cards.forEach(card => card.classList.add('filtering'));
+      cards.forEach(card => card.classList.add('filtering'));
 
-        window.setTimeout(() => {
-          cards.forEach((card, i) => {
-            const match = cat === 'all' || card.dataset.cat === cat;
-            card.classList.toggle('hide', !match);
-            if (match) {
-              card.style.transitionDelay = (i % 6) * 60 + 'ms';
-            }
-          });
-          // force reflow so the transition re-triggers
-          void document.querySelector('.portfolio-grid')?.offsetWidth;
-          cards.forEach(card => card.classList.remove('filtering'));
-          window.setTimeout(() => cards.forEach(card => { card.style.transitionDelay = ''; }), 500);
-        }, 220);
-      });
+      window.setTimeout(() => {
+        cards.forEach((card, i) => {
+          const match = cat === 'all' || card.dataset.cat === cat;
+          card.classList.toggle('hide', !match);
+          if (match) {
+            card.style.transitionDelay = (i % 6) * 60 + 'ms';
+          }
+        });
+        // force reflow so the transition re-triggers
+        void document.querySelector('.portfolio-grid')?.offsetWidth;
+        cards.forEach(card => card.classList.remove('filtering'));
+        window.setTimeout(() => cards.forEach(card => { card.style.transitionDelay = ''; }), 500);
+      }, 220);
     });
   }
 
@@ -354,13 +374,17 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { Accept: 'application/json' }
         });
         const data = await res.json().catch(() => null);
-        if (res.ok && (!data || data.success === undefined || data.success === 'true' || data.success === true)) {
-          showMsg('success', "Thank you — your message is on its way. I'll get back to you within 1–2 business days.");
-          form.reset();
-          if (renderedAtField) renderedAtField.value = String(Date.now());
-        } else {
-          throw new Error('Request failed');
-        }
+        // FormSubmit responds 200 with { success: "true" } once the target inbox has
+        // confirmed the form (a one-time activation email FormSubmit sends the first
+        // time it sees a new address). If the inbox hasn't confirmed yet, it still
+        // replies 200 but with success:false — that must be treated as a real failure,
+        // not a false positive, so we check the payload rather than trusting res.ok alone.
+        const failed = !res.ok || (data && (data.success === false || data.success === 'false'));
+        if (failed) throw new Error((data && data.message) || 'Request failed');
+
+        showMsg('success', "Thank you — your message is on its way. I'll get back to you within 1–2 business days.");
+        form.reset();
+        if (renderedAtField) renderedAtField.value = String(Date.now());
       } catch (err) {
         msg.style.display = 'block';
         msg.className = 'form-msg error';
@@ -388,44 +412,22 @@ document.addEventListener('DOMContentLoaded', () => {
     img.addEventListener('contextmenu', e => e.preventDefault());
   });
 
-  // ============ Case-nav preview cards (Previous/Next) ============
-  // Pulls cover images + categories straight from content/projects.json so the
-  // Previous/Next cards look premium automatically for every project the CMS
-  // manages -- no per-page HTML editing required, ever.
-  const caseNav = document.querySelector('.case-nav');
-  if (caseNav) {
-    fetch('../content/projects.json')
-      .then(res => (res.ok ? res.json() : null))
-      .then(data => {
-        if (!data || !Array.isArray(data.items)) return;
-        const byFile = {};
-        data.items.forEach(item => {
-          const file = (item.link || '').split('/').pop();
-          if (file) byFile[file] = item;
-        });
-        caseNav.querySelectorAll('a.prev, a.next').forEach(link => {
-          const file = (link.getAttribute('href') || '').split('/').pop();
-          const info = byFile[file];
-          if (!info || !info.image) return;
-          const preview = document.createElement('span');
-          preview.className = 'case-nav-preview';
-          const img = document.createElement('img');
-          img.src = '../' + info.image;
-          img.alt = '';
-          img.loading = 'lazy';
-          img.decoding = 'async';
-          img.setAttribute('draggable', 'false');
-          preview.appendChild(img);
-          link.classList.add('has-preview');
-          link.prepend(preview);
-          if (info.category) {
-            const tag = document.createElement('span');
-            tag.className = 'case-nav-cat';
-            tag.textContent = info.category;
-            link.appendChild(tag);
-          }
-        });
-      })
-      .catch(() => { /* Cards still work as plain text links if this fails */ });
-  }
+  // ============ Case-study pages: content, colours, typography, mockups,
+  // gallery, and prev/next nav all arrive dynamically from case-study.js
+  // (which itself reads content/projects.json). This just applies the
+  // site's standard reveal-on-scroll + image protection to whatever it
+  // injected, exactly the same way it's applied to everything else.
+  document.addEventListener('case-study:rendered', () => {
+    const fresh = document.querySelectorAll('#cs-blocks .case-block, #cs-nav.case-nav');
+    fresh.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.setProperty('--i', i % 6);
+      io.observe(el);
+    });
+    document.querySelectorAll('#cs-blocks img, #cs-nav img').forEach(img => {
+      img.setAttribute('draggable', 'false');
+      img.addEventListener('dragstart', e => e.preventDefault());
+      img.addEventListener('contextmenu', e => e.preventDefault());
+    });
+  });
 });

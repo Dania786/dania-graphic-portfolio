@@ -291,74 +291,73 @@
         <p>Every project here started with a business problem — not just a blank canvas. Filter by category to see the thinking behind each one.</p>
       </div>
 
-      <div class="filter-row reveal">
+      <div class="filter-row reveal" id="portfolio-filters">
+        <!-- Rebuilt automatically from content/projects.json (js/main.js): one pill
+             per distinct category found across all projects, plus "All Work".
+             Creating, renaming, or deleting a category in the CMS is just
+             typing on a project's Category field — nothing here needs editing.
+             This static button is a fallback only, for if that fetch fails. -->
         <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="logo">Logo Design</button>
-        <button class="filter-btn" data-filter="packaging">Packaging Design</button>
-        <button class="filter-btn" data-filter="business-card">Business Card</button>
-        <button class="filter-btn" data-filter="hangtag">Hang Tags</button>
-        <button class="filter-btn" data-filter="social">Social Media</button>
-        <button class="filter-btn" data-filter="print">Print &amp; Advertising</button>
       </div>
 
       <div class="portfolio-grid" id="portfolio-grid">
         <a href="projects/swiftbox.html" class="p-card reveal" data-cat="logo">
-          <div class="thumb"><img src="assets/img/swiftbox-1.jpg" alt="Swift Box music streaming logo design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/swiftbox-1.png" alt="Swift Box music streaming logo design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Logo Design</span><h3>Swift Box</h3><p>A playful mark for a music streaming brand.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/was.html" class="p-card reveal" data-cat="logo">
-          <div class="thumb"><img src="assets/img/was-1.jpg" alt="Waqar Ahmed Sheikh personal monogram logo design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/was-1.png" alt="Waqar Ahmed Sheikh personal monogram logo design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Logo Design</span><h3>Waqar Ahmed Sheikh</h3><p>A bold monogram mark for a personal brand.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/dailysip.html" class="p-card reveal" data-cat="logo">
-          <div class="thumb"><img src="assets/img/dailysip-1.jpg" alt="The Daily Sip coffee shop logo design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/dailysip-1.png" alt="The Daily Sip coffee shop logo design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Logo Design</span><h3>The Daily Sip</h3><p>A warm, walkable mark for an independent coffee shop.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/nibble.html" class="p-card reveal" data-cat="packaging">
-          <div class="thumb"><img src="assets/img/nibble-1.jpg" alt="Nibble and Co protein cookie packaging design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/nibble-1.png" alt="Nibble and Co protein cookie packaging design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Packaging Design</span><h3>Nibble &amp; Co.</h3><p>Stand-up pouch packaging for a protein cookie brand.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/whirl.html" class="p-card reveal" data-cat="packaging">
-          <div class="thumb"><img src="assets/img/whirl-1.jpg" alt="Whirl designer babywear luxury packaging bag and box" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/whirl-1.png" alt="Whirl designer babywear luxury packaging bag and box" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Packaging Design</span><h3>Whirl Babywear</h3><p>Luxury unboxing packaging for a designer babywear label.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/aquapure.html" class="p-card reveal" data-cat="packaging">
-          <div class="thumb"><img src="assets/img/aquapure-1.jpg" alt="Aqua Pure mineral water bottle packaging and label design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/aquapure-1.png" alt="Aqua Pure mineral water bottle packaging and label design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Packaging Design</span><h3>Aqua Pure</h3><p>Bottle and label packaging system for a mineral water brand.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/jennifers.html" class="p-card reveal" data-cat="business-card">
-          <div class="thumb"><img src="assets/img/jennifers-1.jpg" alt="Jennifer's Heaven floral boutique business card design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/jennifers-1.png" alt="Jennifer's Heaven floral boutique business card design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Business Card</span><h3>Jennifer's Heaven</h3><p>Letterpress-inspired cards for a floral boutique.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/xtracheese.html" class="p-card reveal" data-cat="business-card">
-          <div class="thumb"><img src="assets/img/xtracheese-1.jpg" alt="XC Xtra Cheese country manager business card design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/xtracheese-1.png" alt="XC Xtra Cheese country manager business card design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Business Card</span><h3>XC Xtra Cheese</h3><p>Bold red-and-black card for a pizza brand's country manager.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/invre.html" class="p-card reveal" data-cat="hangtag">
-          <div class="thumb"><img src="assets/img/invre-1.jpg" alt="INVRE apparel hang tag design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/invre-1.png" alt="INVRE apparel hang tag design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Hang Tags</span><h3>INVERSE Hang Tags</h3><p>Two-part hang tag system for a streetwear label.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/fashionsale.html" class="p-card reveal" data-cat="social">
-          <div class="thumb"><img src="assets/img/fashionsale-1.jpg" alt="Fashion sale hoodie Instagram promotional post design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/fashionsale-1.png" alt="Fashion sale hoodie Instagram promotional post design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Social Media Design</span><h3>Hoodie Drop Promo</h3><p>An Instagram promo post for a limited hoodie release.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/chanel.html" class="p-card reveal" data-cat="print">
-          <div class="thumb"><img src="assets/img/chanel-1.jpg" alt="Bleu de Chanel billboard advertising concept design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/chanel-1.png" alt="Bleu de Chanel billboard advertising concept design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Print &amp; Advertising</span><h3>Bleu de Chanel OOH</h3><p>A conceptual billboard campaign for a fragrance launch.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>
         <a href="projects/volt.html" class="p-card reveal" data-cat="print">
-          <div class="thumb"><img src="assets/img/volt-1.jpg" alt="VOLT streetwear graphic t-shirt print design" loading="lazy" decoding="async"></div>
+          <div class="thumb"><img src="assets/img/volt-1.png" alt="VOLT streetwear graphic t-shirt print design" loading="lazy" decoding="async"></div>
           <div class="info"><span class="tag">Print &amp; Advertising</span><h3>VOLT Streetwear</h3><p>Circuit-inspired graphic print for a streetwear drop.</p></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
         </a>

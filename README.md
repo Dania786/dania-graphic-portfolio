@@ -50,10 +50,9 @@ If you ever want to skip the confirmation step, you can also activate it in adva
 - Colors and fonts are controlled centrally in `css/style.css` under the `:root` section at the top of the file.
 
 ## 4. Adding a new case study
-1. Duplicate any file in `projects/` as a starting template.
-2. Update the text, images, palette, and typography sections.
-3. Add an entry to `content/projects.json` (or use the CMS at `/admin/` — see below) linking to your new file.
-4. Update the `case-nav` (Previous/Next) links on the two neighboring project pages so the new project is included in the loop.
+**Recommended — through the CMS (see section 5):** add a new entry at `/admin/`, fill in the fields, leave "Legacy Case Study File" blank, and publish. That's it — no HTML file to create, and Previous/Next navigation on neighboring projects updates itself automatically since it's generated from `content/projects.json` at page load, not hand-linked.
+
+**Manual alternative (editing `content/projects.json` directly, without the CMS UI):** add a new object to the `items` array with the same fields the CMS uses (see `admin/config.yml` for the full list) and leave `link` unset. The site builds the rest.
 
 ## 5. Managing the portfolio without touching HTML (Decap CMS)
 The homepage portfolio grid now renders from `content/projects.json` at page load, and that file is editable through a free admin panel at `/admin/` — powered by **Decap CMS**.
@@ -70,7 +69,12 @@ The admin panel is not linked from anywhere on the public site and only people y
 
 **If hosting on GitHub Pages or Vercel instead of Netlify:** Decap CMS still works, but the `git-gateway` backend in `admin/config.yml` needs to be swapped for the `github` backend plus a small free OAuth proxy (Decap's docs list a few zero-cost options). Netlify's Identity + Git Gateway is the only one of the three that needs no extra proxy at all.
 
-**Scope note:** the CMS manages the **portfolio grid** (what's shown, in what order, which category, cover image, featured flag). It does not auto-generate brand-new case-study *pages* — this site is hand-built static HTML, not a site generator, so a genuinely new project still needs a new `projects/your-project.html` file created once (steps above), after which it's fully manageable from the CMS like every other project.
+**Scope note:** the CMS manages the full project — portfolio card, case-study page, category, cover image, featured flag, and Previous/Next navigation. A brand-new project needs **no HTML file at all**: leave the "Legacy Case Study File" field blank in the CMS and the site automatically serves its case-study page at `case-study.html?p=<slug>`, rendered entirely from `content/projects.json`. The 12 original projects still point at their own file in `projects/` (via the `link` field) purely so their existing URLs keep working — that field only exists for backwards compatibility, not because new projects need one.
+
+**Categories** are plain text on each project, not a separate list you manage — so:
+- *Creating* one: type a new word in a project's Category field.
+- *Renaming* one: edit the Category text on every project currently using that name (the filter bar always reflects whatever text is on the projects it reads — editing one project only renames that project's category, not the others sharing it).
+- *Deleting* one: once no project uses that text anymore, it disappears from the filter bar on its own — nothing to delete manually.
 
 ## 6. Hero video
 `index.html`'s hero frame is wired for a video (`data-video-src` / `data-video-webm` on the `.frame` element) — autoplay, loop, muted, inline, with automatic fallback to the portrait poster image if the files are missing or `prefers-reduced-motion` is on. Drop matching exports at:
@@ -81,5 +85,5 @@ assets/video/hero.webm
 and it activates automatically — no code changes needed. No video is included in this build: photorealistic video generated from a real portrait isn't something produced as part of this delivery, so this stays a real video export you supply (a videographer, stock cinemagraph, or a video tool you run yourself).
 
 ## 7. Image protection
-Right-click, drag, and long-press-save are disabled on all portfolio thumbnails and case-study images, and every portfolio image carries a single, subtle signature mark — "DANIA HASNAIN" in thin white type at ~10% opacity, bottom-right corner only, never tiled or repeated — baked directly into the JPG. Regenerate it any time with `python3 watermark.py <input> <output>` at the project root if you replace an image later.
+Right-click, drag, and long-press-save are disabled on all portfolio thumbnails and case-study images, and every portfolio image carries a single signature mark — "DANIA HASNAIN" in thin white type with a soft dark halo behind it, bottom-right corner only, never tiled or repeated — baked directly into the JPG. The halo keeps the mark legible over both light and dark parts of a photo without needing a solid background pill. Regenerate it any time with `python3 watermark.py <input> <output>` at the project root if you replace an image later.
 

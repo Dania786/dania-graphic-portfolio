@@ -1007,3 +1007,18 @@ section{ padding:120px 0; position:relative; }
    Portfolio image protection (non-destructive, accessible)
    ============================================================ */
 .p-card .thumb img, .case-cover img, .case-block img{ -webkit-user-drag:none; user-select:none; }
+
+/* ============================================================
+   CMS-driven case study template (Phase 5 architecture)
+   ============================================================ */
+.case-title-row{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.case-logo{
+  width:56px; height:56px; border-radius:14px; object-fit:contain;
+  background:var(--surface, #fff); padding:8px; box-shadow:var(--shadow-sm);
+  flex-shrink:0;
+}
+.case-block .content .tools-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:4px; }
+.case-block .content .process-step{ margin-bottom:34px; }
+.case-block .content .process-step:last-child{ margin-bottom:0; }
+.case-block .content .process-step h3{ font-family:var(--font-display); font-size:17px; margin-bottom:8px; }
+.cs-empty-note{ color:var(--muted); font-size:14px; font-style:italic; }

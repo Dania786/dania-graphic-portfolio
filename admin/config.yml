@@ -26,10 +26,10 @@ collections:
   - name: "projects"
     label: "Portfolio Projects"
     label_singular: "Project"
-    description: "Everything shown in the portfolio grid on the homepage. Reordering, adding, deleting, or editing here updates the live site automatically — no HTML editing needed."
+    description: "Every project card AND its full case-study page. Add, edit, reorder, or delete here and the live site updates automatically — the homepage card, the case-study page, its category, and its Previous/Next navigation are all generated from this one entry. No HTML editing, ever."
     files:
       - name: "grid"
-        label: "Portfolio Grid"
+        label: "Portfolio Projects"
         file: "content/projects.json"
         fields:
           - label: "Projects"
@@ -38,29 +38,89 @@ collections:
             summary: "{{fields.order}} — {{fields.title}} ({{fields.category}})"
             fields:
               - { label: "Title", name: "title", widget: "string" }
+              - label: "Slug (URL id)"
+                name: "slug"
+                widget: "string"
+                hint: "Lowercase, hyphens only, must be unique (e.g. my-new-project). This is how the site builds the project's case-study URL automatically — required for every project, new or existing."
               - label: "Category"
                 name: "category"
-                widget: "select"
-                options: ["Logo Design", "Packaging Design", "Business Card", "Hang Tags", "Social Media Design", "Print & Advertising"]
-              - label: "Filter Key"
-                name: "cat_key"
-                widget: "select"
-                hint: "Controls which filter button shows this project — must match Category above."
-                options:
-                  - { label: "Logo Design", value: "logo" }
-                  - { label: "Packaging Design", value: "packaging" }
-                  - { label: "Business Card", value: "business-card" }
-                  - { label: "Hang Tags", value: "hangtag" }
-                  - { label: "Social Media Design", value: "social" }
-                  - { label: "Print & Advertising", value: "print" }
-              - { label: "Short Description", name: "description", widget: "string" }
-              - { label: "Cover / Thumbnail Image", name: "image", widget: "image" }
-              - label: "Case Study Page"
-                name: "link"
                 widget: "string"
-                hint: "Relative path to the project's HTML page, e.g. projects/my-project.html. Creating a brand-new case study page still needs a one-off request — this field just points to it."
+                hint: "Type an EXISTING category name to file this project under it, or type a brand-new word to create a new category — the filter bar and navigation rebuild themselves from whatever categories exist. Renaming this text renames the category everywhere it's used; no project left using a name makes it disappear automatically."
+              - { label: "Short Description (shown on the portfolio card)", name: "description", widget: "text" }
+              - { label: "Client", name: "client", widget: "string", required: false }
+              - { label: "Service", name: "service", widget: "string", required: false, hint: "Usually the same as Category — shown in the case-study meta strip." }
+              - { label: "Timeline", name: "timeline", widget: "string", required: false, hint: "e.g. 1 Week, 4 Business Days" }
+              - { label: "Cover Image", name: "coverImage", widget: "image", hint: "Used as the portfolio card thumbnail and the case-study hero image." }
+              - { label: "Cover Image Alt Text", name: "coverAlt", widget: "string", required: false }
+              - { label: "Project Logo", name: "logo", widget: "image", required: false, hint: "Shown next to the project title on its case-study page." }
+              - { label: "Overview", name: "overview", widget: "text", required: false }
+              - { label: "Project Brief", name: "brief", widget: "text", required: false }
+              - { label: "Goal & Challenge", name: "goal", widget: "text", required: false }
+              - label: "Design Process"
+                name: "process"
+                widget: "list"
+                required: false
+                summary: "{{fields.step_title}}"
+                fields:
+                  - { label: "Step Title", name: "step_title", widget: "string" }
+                  - { label: "Step Text", name: "step_text", widget: "text" }
+                  - { label: "Step Image", name: "image", widget: "image", required: false }
+                  - { label: "Step Image Alt Text", name: "imageAlt", widget: "string", required: false }
+              - label: "Brand Personality (tags)"
+                name: "personality"
+                widget: "list"
+                required: false
+                field: { label: "Tag", name: "value", widget: "string" }
+              - label: "Brand Colors"
+                name: "colors"
+                widget: "list"
+                required: false
+                summary: "{{fields.label}} — {{fields.hex}}"
+                fields:
+                  - { label: "Color Name", name: "label", widget: "string" }
+                  - { label: "Hex Color", name: "hex", widget: "color" }
+              - label: "Typography"
+                name: "typography"
+                widget: "list"
+                required: false
+                summary: "{{fields.font_name}} — {{fields.role}}"
+                fields:
+                  - { label: "Font Name (must be an exact Google Fonts name)", name: "font_name", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string", hint: "e.g. Display, Body / Text" }
+              - label: "Mockups"
+                name: "mockups"
+                widget: "list"
+                required: false
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+              - { label: "Final Outcome", name: "outcome", widget: "text", required: false }
+              - label: "Gallery Images"
+                name: "gallery"
+                widget: "list"
+                required: false
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+              - label: "Tools Used"
+                name: "tools"
+                widget: "list"
+                required: false
+                field: { label: "Tool", name: "value", widget: "string" }
+              - label: "Deliverables"
+                name: "deliverables"
+                widget: "list"
+                required: false
+                field: { label: "Deliverable", name: "value", widget: "string" }
               - { label: "Featured", name: "featured", widget: "boolean", default: false }
               - { label: "Display Order", name: "order", widget: "number", value_type: "int" }
+              - label: "Legacy Case Study File (leave blank for new projects)"
+                name: "link"
+                widget: "string"
+                required: false
+                hint: "Only set on the 12 original projects, pointing at their existing /projects/*.html file so old links keep working. Leave this EMPTY for any brand-new project — the site builds its case-study URL from the Slug automatically, with nothing to create or type here."
 
   # ================================================================
   # INTERNAL CLIENT TOOLKIT -- visible only inside this logged-in CMS.
