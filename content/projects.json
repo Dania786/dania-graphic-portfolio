@@ -954,6 +954,62 @@
       ],
       "description": "Circuit-inspired graphic print for a streetwear drop.",
       "category": "Print & Advertising"
+    },
+    {
+      "timeline": "2 Business Days",
+      "slug": "fraris-luxury-fragrance-packaging",
+      "featured": false,
+      "personality": [
+        "Luxurious",
+        "Masculine",
+        "Mysterious",
+        "Minimalist"
+      ],
+      "mockups": [
+        {}
+      ],
+      "typography": [
+        {
+          "font_name": "Cormorant Garamond",
+          "role": "Display / Logo"
+        },
+        {
+          "font_name": " Montserrat",
+          "role": "Body / Text - Secondary info"
+        }
+      ],
+      "colors": [
+        {
+          "label": "Jet Black",
+          "hex": "#010103"
+        },
+        {
+          "label": "Midnight Navy (Box Border / Packaging Base)",
+          "hex": "#252d3d"
+        },
+        {
+          "label": "Platinum Silver (Typography)",
+          "hex": "#cbd3d8"
+        }
+      ],
+      "coverAlt": "FRARIS luxury perfume bottle and box packaging on dark silk background with reflective surface",
+      "outcome": "The final packaging delivers a high-end unboxing experience that matches luxury department store standards. The mark appears consistently across the bottle, box, and promotional assets, recognizable even at small thumbnail size for online retail.",
+      "goal": "The challenge was to make a generic bottle shape feel luxurious and proprietary without custom glass molding. We needed to achieve a premium look using only color, finish, and typography. The packaging had to feel like a $200+ fragrance while keeping production costs efficient.",
+      "deliverables": [
+        "Primary Packaging Design (Bottle)",
+        "Secondary Packaging Design (Box)",
+        "3D Mockup Presentation"
+      ],
+      "service": "Packaging Design",
+      "title": "FRARIS - Luxury Fragrance Packaging Design",
+      "overview": "FRARIS is a luxury men's fragrance that needed a packaging identity as bold and mysterious as its scent. The goal was to create a high-end, minimalist packaging system that stands out on shelves and feels expensive to the touch. The final design uses a deep midnight blue palette, silver chrome accents, and clean serif typography to communicate premium masculinity.",
+      "brief": "Client approached for a complete perfume packaging design - both primary (bottle) and secondary (box) packaging. Requirements were luxury look, masculine energy, minimal text, and strong shelf presence. The design needed to work for E-commerce and retail.",
+      "tools": [
+        "Adobe illustrator ",
+        "Adobe photoshop "
+      ],
+      "description": "Premium packaging design for FRARIS, a luxury men's fragrance brand crafted to evoke mystery, power, and sophistication through deep navy minimalism.",
+      "category": "packaging design"
     }
   ]
 }
