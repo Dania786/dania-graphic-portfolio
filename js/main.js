@@ -348,6 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     form.addEventListener('submit', async (e) => {
+      console.log("SUBMIT BUTTON CLICKED");
       e.preventDefault();
       showMsg('', '');
 
