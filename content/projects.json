@@ -1028,6 +1028,29 @@
       ],
       "description": "A premium product advertisement designed to showcase high-end wireless headphones through luxury-inspired visuals, feature highlights, and a strong call-to-action.",
       "category": "Social Media Design"
+    },
+    {
+      "timeline": "1 Business Day",
+      "coverImage": "/assets/img/0321-2121524-0310-2jjjjjjjjjjjjjjjj555845-3-.png",
+      "slug": "momoza-restaurant-menu-flyer",
+      "client": "",
+      "featured": false,
+      "order": 16,
+      "goal": "The objective was to organize multiple food categories and pricing details without making the flyer feel crowded. The primary challenge was balancing informational content with visual appeal while ensuring customers could quickly browse menu options. Establishing a consistent brand identity through color, imagery, and typography was equally important.",
+      "deliverables": [
+        "Restaurant Menu Flyer",
+        "Print-Ready Menu Design",
+        "Promotional Restaurant Poster",
+        "Social Media Promotional Creative"
+      ],
+      "service": "Print Design",
+      "title": "MOMOZA Restaurant Menu Brochure",
+      "tools": [
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ],
+      "description": "A clean and visually engaging restaurant menu flyer designed to showcase MOMOZA's pizza and momos offerings with a strong brand identity, clear pricing, and promotional messaging.",
+      "category": "Print Design"
     }
   ]
 }
