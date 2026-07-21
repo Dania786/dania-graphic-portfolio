@@ -608,7 +608,22 @@ section{ padding:clamp(56px, 10vw, 120px) 0; position:relative; }
 .case-meta .m{ min-width:120px; }
 .case-meta .m span{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:6px; }
 .case-meta .m b{ font-family:var(--font-display); font-size:15px; font-weight:600; }
-.case-cover{ border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); margin-bottom:clamp(48px, 9vw, 100px); }
+.case-cover{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  width:100%;
+
+  min-height:80vh;
+
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+
+  box-shadow:var(--shadow-lg);
+
+  margin-bottom:clamp(48px,9vw,100px);
+}
 .case-cover img{ width:100%; display:block; }
 
 .case-block{ display:grid; grid-template-columns:220px 1fr; gap:clamp(24px, 4.5vw, 50px); padding:clamp(32px, 6vw, 56px) 0; border-top:1px solid var(--line); }
