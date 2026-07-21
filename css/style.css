@@ -211,6 +211,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     padding:100px 32px 40px; gap:26px;
     transform:translateX(100%); transition:transform .45s var(--ease);
     box-shadow:var(--shadow-lg);
+  .case-cover{
+    min-height:auto;
+}
+
+.case-cover img{
+    max-width:100%;
+    max-height:75vh;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+}
   }
   .nav-links.open{ transform:translateX(0); }
   .nav-toggle{ display:flex; }
