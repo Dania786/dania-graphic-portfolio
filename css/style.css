@@ -624,7 +624,18 @@ section{ padding:clamp(56px, 10vw, 120px) 0; position:relative; }
 
   margin-bottom:clamp(48px,9vw,100px);
 }
-.case-cover img{ width:100%; display:block; }
+.case-cover img{
+
+  display:block;
+
+  width:auto;
+  height:auto;
+
+  max-width:100%;
+  max-height:80vh;
+
+  object-fit:contain;
+}
 
 .case-block{ display:grid; grid-template-columns:220px 1fr; gap:clamp(24px, 4.5vw, 50px); padding:clamp(32px, 6vw, 56px) 0; border-top:1px solid var(--line); }
 .case-block .label{ font-family:var(--font-display); font-weight:600; font-size:15px; color:var(--green-deep); }
