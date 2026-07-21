@@ -1017,6 +1017,11 @@
       "slug": "premium-wireless-headphones-ad",
       "featured": false,
       "order": 17,
+      "mockups": [
+        {
+          "image": "/assets/img/screenshot-705-.png"
+        }
+      ],
       "typography": [],
       "deliverables": [
         "Social Media Advertisement",
