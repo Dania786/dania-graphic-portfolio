@@ -1012,18 +1012,24 @@
       "category": "packaging design"
     },
     {
+      "timeline": "1 day",
       "coverImage": "/assets/img/headphone-complete-09.png",
       "logo": "",
       "slug": "premium-wireless-headphones-ad",
-      "featured": false,
+      "featured": true,
+      "personality": [
+        "Premium",
+        "Modern",
+        "High-Tech",
+        "Minimal",
+        "Bold",
+        "Professional"
+      ],
       "order": 17,
       "mockups": [],
       "typography": [],
-      "gallery": [
-        {
-          "image": "/assets/img/screenshot-705-.png"
-        }
-      ],
+      "process": [],
+      "gallery": [],
       "deliverables": [
         "Social Media Advertisement",
         "Product Promotion Banner",
@@ -1031,6 +1037,8 @@
         "Digital Marketing Creative"
       ],
       "title": "Premium Wireless Headphones Product Advertisement",
+      "overview": "This concept advertisement was created to promote premium wireless headphones using a clean, high-contrast layout inspired by luxury technology brands. The design combines bold typography, realistic product presentation, and informative feature callouts to communicate product value while maintaining a modern and sophisticated visual identity.",
+      "brief": "Design a premium social media advertisement that instantly captures attention while showcasing the product's key selling points. The layout needed to balance product aesthetics with technical information without overwhelming the viewer, encouraging users to explore or purchase the product.",
       "tools": [
         "Adobe Photoshop"
       ],
