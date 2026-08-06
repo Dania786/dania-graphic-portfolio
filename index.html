@@ -73,7 +73,13 @@
 
 <main id="main-content">
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero--video">
+    <div class="hero-bg">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.png">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-overlay"></div>
+    </div>
     <div class="container hero-grid">
       <div>
         <p class="hero-kicker eyebrow"><span class="swatch"></span>Graphic Designer · Brand & Packaging</p>
@@ -87,26 +93,6 @@
           <div class="stat stat-badge"><b class="badge-mark">✦</b><span>Design Excellence</span></div>
           <div class="stat"><b>6</b><span>Core Services</span></div>
           <div class="stat"><b>12h</b><span>Avg. Response Time</span></div>
-        </div>
-      </div>
-      <div class="hero-visual" data-parallax data-hero-visual>
-        <div class="blob blob-1" data-parallax-layer="0.4"></div>
-        <div class="blob blob-2" data-parallax-layer="0.25"></div>
-        <div class="frame cine-frame img-reveal reveal" data-hero-frame
-             data-video-src="assets/video/hero.mp4"
-             data-video-webm="assets/video/hero.webm">
-          <!-- Hero video slot: place hero.mp4 / hero.webm in assets/video/ to activate.
-               Until those files exist (or on prefers-reduced-motion), this cinematic
-               CSS/JS animated background is shown — see the heroVideo module in js/main.js. -->
-          <div class="cine-mesh"></div>
-          <div class="cine-glow cine-glow-1"></div>
-          <div class="cine-glow cine-glow-2"></div>
-          <div class="cine-photo-wrap">
-            <img class="cine-photo" src="assets/img/hero-poster.png" data-hero-poster alt="Dania Hasnain, graphic designer">
-          </div>
-          <div class="cine-sheen"></div>
-          <div class="cine-particles"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="cine-grain"></div>
         </div>
       </div>
     </div>
