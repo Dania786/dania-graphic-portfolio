@@ -1070,7 +1070,9 @@
     },
     {
       "coverImage": "/assets/img/img_20260806_081943.jpg",
+      "slug": "meisterhaus-brand-identity",
       "featured": false,
+      "order": 1,
       "mockups": [
         {
           "image": "/assets/img/watermarked_low_8.jpg"
