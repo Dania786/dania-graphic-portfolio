@@ -75,7 +75,7 @@
   <!-- HERO -->
   <section class="hero hero--video">
     <div class="hero-bg">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.png">
+      <video class="hero-bg-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto">
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
       <div class="hero-bg-overlay"></div>
@@ -384,6 +384,7 @@
         <input type="hidden" name="_subject" value="New project inquiry from portfolio site">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_url" id="form-page-url" value="">
         <!-- Honeypot: real visitors never see or fill this; bots that auto-fill every field get silently discarded -->
         <div class="hp-field" aria-hidden="true">
           <label for="hp-website">Website</label>

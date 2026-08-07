@@ -266,6 +266,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .hero-bg{
   position:absolute; inset:0; z-index:0; overflow:hidden;
+  background:#102424; /* solid fallback so nothing but the video is ever visible here, even for a split second before it paints */
 }
 .hero-bg-video{
   position:absolute; inset:0;

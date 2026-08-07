@@ -262,6 +262,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ============ Hero background video — reliable autoplay across real devices ============
+  // Some browsers (mobile Data Saver / battery-saver modes, certain in-app
+  // webviews, some desktop browsers on local file:// pages) silently reject
+  // the native `autoplay` attribute even though the video is muted + inline.
+  // When that happens the browser just freezes with nothing retrying the
+  // play() call. This makes sure the video actually plays: it (re)tries
+  // immediately, retries as more data loads, and — as a guaranteed fallback —
+  // retries on the very first tap/scroll/click/key, which every browser
+  // accepts as a valid user gesture to unlock playback. The gesture
+  // listeners always stay attached until the video is confirmed actually
+  // playing (not just "not paused", which flips synchronously and isn't a
+  // reliable signal that autoplay actually succeeded).
+  const heroBgVideo = document.querySelector('.hero-bg-video');
+  if (heroBgVideo) {
+    heroBgVideo.muted = true;
+    heroBgVideo.defaultMuted = true;
+    heroBgVideo.setAttribute('muted', '');
+    heroBgVideo.autoplay = true;
+
+    const tryPlayHeroVideo = () => {
+      try {
+        const playPromise = heroBgVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => { /* fallback listeners/interval below will retry */ });
+        }
+      } catch (err) { /* older engines can throw synchronously — ignored, retried below */ }
+    };
+
+    tryPlayHeroVideo();
+    heroBgVideo.addEventListener('loadeddata', tryPlayHeroVideo);
+    heroBgVideo.addEventListener('loadedmetadata', tryPlayHeroVideo);
+    heroBgVideo.addEventListener('canplay', tryPlayHeroVideo);
+    heroBgVideo.addEventListener('canplaythrough', tryPlayHeroVideo);
+    window.addEventListener('load', tryPlayHeroVideo);
+    window.addEventListener('pageshow', tryPlayHeroVideo);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) tryPlayHeroVideo();
+    });
+
+    const unlockEvents = ['touchstart', 'pointerdown', 'click', 'scroll', 'keydown', 'mousemove'];
+    const unlockHeroVideo = () => tryPlayHeroVideo();
+    unlockEvents.forEach(evt => window.addEventListener(evt, unlockHeroVideo, { passive: true }));
+
+    // Belt-and-suspenders: keep quietly retrying for the first few seconds
+    // in case every event-based hook above missed the right moment (some
+    // browsers, especially when a page is opened as a local file rather
+    // than served over http/https, don't fire these events in the usual
+    // order). Stops itself the instant the video is confirmed playing.
+    let heroPlayAttempts = 0;
+    const heroPlayRetryTimer = window.setInterval(() => {
+      heroPlayAttempts++;
+      if (!heroBgVideo.paused && !heroBgVideo.ended && heroBgVideo.currentTime > 0) {
+        window.clearInterval(heroPlayRetryTimer);
+        return;
+      }
+      tryPlayHeroVideo();
+      if (heroPlayAttempts >= 20) window.clearInterval(heroPlayRetryTimer); // give up after ~10s
+    }, 500);
+
+    heroBgVideo.addEventListener('playing', () => {
+      window.clearInterval(heroPlayRetryTimer);
+      unlockEvents.forEach(evt => window.removeEventListener(evt, unlockHeroVideo));
+    });
+  }
+
   // Dim the hero visual slightly as the next section overlaps, restore on the way back up
   const heroSection = document.querySelector('.hero');
   if (heroFrame && heroSection) {
@@ -292,6 +357,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderedAtField = form.querySelector('#form-rendered-at');
     const honeyField = form.querySelector('#hp-website');
     if (renderedAtField) renderedAtField.value = String(Date.now());
+
+    // FormSubmit uses the page's Referer header to match submissions to the
+    // activated inbox. Modern browsers now send a trimmed-down referrer by
+    // default, which is exactly what FormSubmit's own docs point to as the
+    // cause of intermittent "success:false" errors and messages that report
+    // success but never arrive: https://formsubmit.co/help. Sending the exact
+    // page URL as a hidden `_url` field is FormSubmit's documented fix.
+    const formUrlField = form.querySelector('#form-page-url');
+    if (formUrlField) formUrlField.value = window.location.href;
 
     const FIELD_RULES = {
       name: { required: true, minLength: 2, message: 'Please enter your name.' },
