@@ -217,8 +217,7 @@
     // The generic case-study.html lives at site root, so paths are used as-is.
     const basePath = window.PROJECT_SLUG ? '../' : '';
 
-    fetch(basePath + 'content/projects.json')
-      .then(res => res.json())
+    window.dhLoadProjects(basePath)
       .then(data => {
         const items = Array.isArray(data) ? data : data.items;
         const current = items.find(x => x.slug === slug);

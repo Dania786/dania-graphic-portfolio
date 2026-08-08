@@ -2,7 +2,7 @@
   "items": [
     {
       "timeline": "4 Business Days",
-      "coverImage": "/assets/img/swiftbox-1.png",
+      "coverImage": "assets/img/swiftbox-1.png",
       "logo": "",
       "slug": "swiftbox",
       "client": "Swift Box",
@@ -957,7 +957,7 @@
     },
     {
       "timeline": "2 Business Days",
-      "coverImage": "/assets/img/hopefully-completed-o111_.png",
+      "coverImage": "assets/img/hopefully-completed-o111_.png",
       "slug": "fraris-luxury-fragrance-packaging",
       "featured": false,
       "personality": [
@@ -1013,7 +1013,7 @@
     },
     {
       "timeline": "1 day",
-      "coverImage": "/assets/img/headphone-complete-09.png",
+      "coverImage": "assets/img/headphone-complete-09.png",
       "logo": "",
       "slug": "premium-wireless-headphones-ad",
       "featured": true,
@@ -1047,7 +1047,7 @@
     },
     {
       "timeline": "1 Business Day",
-      "coverImage": "/assets/img/0321-2121524-0310-2jjjjjjjjjjjjjjjj555845-3-.png",
+      "coverImage": "assets/img/0321-2121524-0310-2jjjjjjjjjjjjjjjj555845-3-.png",
       "slug": "momoza-restaurant-menu-flyer",
       "client": "",
       "featured": false,

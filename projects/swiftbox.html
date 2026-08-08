@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>(function(){try{var t=localStorage.getItem('dh-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('dh-theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);if(sessionStorage.getItem('dh-intro-shown')){document.documentElement.setAttribute('data-intro-seen','');}if(location.hash){document.documentElement.style.scrollBehavior='auto';}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swift Box | Dania Hasnain — Graphic Designer</title>
 <meta name="description" content="Logo design case study for Swift Box, a music streaming and discovery app.">
@@ -28,6 +28,11 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<div id="site-preloader" aria-hidden="true">
+  <div class="pl-mark">D<em>H</em></div>
+  <div class="pl-name">Dania Hasnain</div>
+  <div class="pl-line"></div>
+</div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="ambient-bg" aria-hidden="true"><span class="ambient-blob a"></span><span class="ambient-blob b"></span><span class="ambient-blob c"></span></div>
 
@@ -110,6 +115,7 @@
 </footer>
 
 <script>window.PROJECT_SLUG = 'swiftbox';</script>
+<script src="../content/projects-data.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/case-study.js"></script>
 </body>

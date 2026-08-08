@@ -1,3 +1,61 @@
+// ============ Preloader ("DH" zoom-in, fades out ~1.2s after load) ============
+// Shows once per browser session (first page opened), not on every project
+// open/back navigation. The inline head script (see <head> of every page)
+// already stamps html[data-intro-seen] as early as possible so the CSS hides
+// #site-preloader before it can even flash on repeat page loads — this just
+// needs to skip re-running the reveal/hide animation in that case.
+(function () {
+  let introSeen = false;
+  try { introSeen = !!sessionStorage.getItem('dh-intro-shown'); } catch (e) {}
+  if (introSeen) return;
+
+  document.body.classList.add('pl-active');
+  const hide = () => {
+    const pl = document.getElementById('site-preloader');
+    if (pl) pl.classList.add('pl-done');
+    document.body.classList.remove('pl-active');
+    try { sessionStorage.setItem('dh-intro-shown', '1'); } catch (e) {}
+  };
+  window.addEventListener('load', () => { window.setTimeout(hide, 1200); });
+  // Safety net: never let the preloader block the site if 'load' is slow/misses.
+  window.setTimeout(hide, 4000);
+})();
+
+// ============ Shared project-data loader ============
+// Prefers a live fetch of content/projects.json (the CMS-editable source of
+// truth — used on the deployed site so edits show up immediately). Falls
+// back to the embedded content/projects-data.js mirror when fetch can't run
+// at all, e.g. when a page is opened directly as a local file (file://),
+// where browsers block fetch() for local files entirely.
+window.dhLoadProjects = function (basePath) {
+  const embedded = window.__PROJECTS_DATA__;
+  if (location.protocol === 'file:') {
+    return embedded ? Promise.resolve(embedded) : Promise.reject(new Error('No local project data available.'));
+  }
+  return fetch(basePath + 'content/projects.json')
+    .then((res) => { if (!res.ok) throw new Error('Bad response'); return res.json(); })
+    .catch((err) => { if (embedded) return embedded; throw err; });
+};
+
+// ============ Land on a #hash instantly, not with a smooth scroll-from-top ============
+// The site uses `scroll-behavior:smooth` for normal in-page nav clicks, but
+// that same CSS rule was also animating a full top-to-bottom scroll every
+// time a page loaded already targeting a hash (e.g. the "← Back to
+// Portfolio" links, which go to index.html#portfolio). The inline head
+// script already froze scroll-behavior to 'auto' for this load; once
+// everything (including the async portfolio grid) has settled, snap to the
+// target once more in case content height shifted, then hand scrolling
+// back to the smooth CSS behaviour for anything the visitor clicks next.
+if (location.hash) {
+  window.addEventListener('load', () => {
+    window.setTimeout(() => {
+      const target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ block: 'start' });
+      document.documentElement.style.scrollBehavior = '';
+    }, 60);
+  });
+}
+
 // ============ Theme toggle ============
 (function () {
   const root = document.documentElement;
@@ -79,6 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
     '.contact-info > *, .contact-form .field, .contact-form .submit-btn'
   ).forEach(el => el.classList.add('reveal'));
 
+  // Same idea for the About Me section — the eyebrow, heading, and each
+  // paragraph fade + rise into view one after another instead of the whole
+  // block appearing at once.
+  document.querySelectorAll('.about-body > *').forEach(el => el.classList.add('reveal'));
+
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -128,8 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectHref = (p) => p.link ? p.link : `case-study.html?p=${encodeURIComponent(p.slug)}`;
 
   if (grid) {
-    fetch('content/projects.json')
-      .then(res => { if (!res.ok) throw new Error('no CMS data'); return res.json(); })
+    window.dhLoadProjects('')
       .then(data => {
         const projects = Array.isArray(data) ? data : data.items;
         if (!Array.isArray(projects) || !projects.length) return;
@@ -429,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Silent bot rejection: honeypot filled, or the form was "filled" in under 2 seconds.
       const tooFast = renderedAtField && (Date.now() - Number(renderedAtField.value || 0)) < 2000;
       if ((honeyField && honeyField.value) || tooFast) {
-        showMsg('success', "Thank you — your message is on its way. I'll get back to you within 1–2 business days.");
+        showMsg('success', "Thank you — your message is on its way. I'll get back to you within 12 hours.");
         form.reset();
         return;
       }
@@ -457,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const failed = !res.ok || (data && (data.success === false || data.success === 'false'));
         if (failed) throw new Error((data && data.message) || 'Request failed');
 
-        showMsg('success', "Thank you — your message is on its way. I'll get back to you within 1–2 business days.");
+        showMsg('success', "Thank you — your message is on its way. I'll get back to you within 12 hours.");
         form.reset();
         if (renderedAtField) renderedAtField.value = String(Date.now());
       } catch (err) {
@@ -504,5 +566,42 @@ document.addEventListener('DOMContentLoaded', () => {
       img.addEventListener('dragstart', e => e.preventDefault());
       img.addEventListener('contextmenu', e => e.preventDefault());
     });
+    wireLightboxImages('#cs-blocks img');
   });
+
+  // ============ Image lightbox — click a project image to open it large ============
+  wireLightboxImages('.case-cover img');
 });
+
+function wireLightboxImages(selector) {
+  let lb = document.querySelector('.dh-lightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.className = 'dh-lightbox';
+    lb.setAttribute('aria-hidden', 'true');
+    lb.innerHTML = '<button type="button" class="dh-lightbox-close" aria-label="Close image preview">&times;</button><img alt="">';
+    document.body.appendChild(lb);
+    const lbImg = lb.querySelector('img');
+    const close = () => {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+    };
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb || e.target.closest('.dh-lightbox-close') || e.target === lbImg) close();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll(selector).forEach(img => {
+    if (img.dataset.lbWired) return;
+    img.dataset.lbWired = '1';
+    img.addEventListener('click', () => {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+    });
+  });
+}
