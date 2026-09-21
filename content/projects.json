@@ -1303,6 +1303,152 @@
       ],
       "description": "A YouTube thumbnail comparing the Blueberry and Funded Squad prop trading firms for a forex trading mentor channel.",
       "category": "Social Media Design"
+    },
+    {
+      "timeline": "With in 1 day",
+      "coverImage": "/assets/img/sneakers-v2-final.png",
+      "slug": "amhuk-mens-sneakers-social-media",
+      "featured": false,
+      "typography": [
+        {
+          "font_name": "Cormorant Garamond",
+          "role": "MEN'S"
+        },
+        {
+          "font_name": "Montserrat",
+          "role": "SNEKER'S"
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#13074c",
+          "label": "DEEP BLUE"
+        },
+        {
+          "hex": "#ffffff",
+          "label": "WHITE"
+        }
+      ],
+      "goal": "The main goal was to make the sneakers the visual focus while creating enough contrast and hierarchy for the headline and supporting elements.",
+      "deliverables": [
+        "Social Media Promotional Post"
+      ],
+      "service": "Social Media Design",
+      "title": "Men’s Sneakers Product Social Media Design",
+      "tools": [
+        "Adobe Photoshop"
+      ],
+      "description": "A bold promotional social media post designed to showcase men’s sneakers with a clean, premium product-focused composition.",
+      "category": "Social Media Design"
+    },
+    {
+      "timeline": "Within 1 Day",
+      "coverImage": "/assets/img/mens-snekaer-v1.png",
+      "slug": "amhuk-mens-sneakers-festive-campaign",
+      "featured": false,
+      "typography": [
+        {
+          "font_name": "Playfair Display ( Medium)",
+          "role": "MEN'S"
+        },
+        {
+          "font_name": "Playfair Display (Regular)",
+          "role": "SNEAKER"
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#000000",
+          "label": "Black"
+        },
+        {
+          "hex": "#ffffff",
+          "label": "WHITE"
+        }
+      ],
+      "goal": "The challenge was to make the product stand out against a dark, atmospheric environment while keeping the promotional message readable.",
+      "deliverables": [
+        "Social Media Campaign Post"
+      ],
+      "service": "Social Media Design",
+      "title": "Men’s Sneakers Festive Season Campaign",
+      "tools": [
+        "Adobe Photoshop"
+      ],
+      "description": "A cinematic social media campaign visual created to promote men’s sneakers for the upcoming festive season.",
+      "category": "Social Media Design"
+    },
+    {
+      "timeline": "Within 1 Day ",
+      "coverImage": "/assets/img/riva-flyer-v1-final.png",
+      "slug": "riva-perfume-social-media-flyer",
+      "featured": false,
+      "typography": [
+        {
+          "font_name": "Source Serif Variable ( Italic )",
+          "role": "Discover a fragrance crafted to leave a lasting impression. (and) Wear your signature "
+        },
+        {
+          "font_name": "Britannic Bold",
+          "role": "BUY NOW"
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#e6a03f",
+          "label": "Gold"
+        },
+        {
+          "label": "Black",
+          "hex": "#000000"
+        }
+      ],
+      "goal": "The goal was to create a premium appearance without overcrowding the layout, while maintaining a clear visual hierarchy between the brand, message, product, and CTA.",
+      "deliverables": [
+        "Social Media Flyer"
+      ],
+      "service": "Social Media Design",
+      "title": "RIVA Perfume Luxury Fragrance Social Media Flyer",
+      "tools": [
+        "Adobe Photoshop"
+      ],
+      "description": "A luxury-inspired promotional flyer designed for RIVA perfume using an elegant black-and-gold visual direction.",
+      "category": "Social Media Design"
+    },
+    {
+      "timeline": "2 Days",
+      "coverImage": "/assets/img/chatgpt-image-aug-24-2026-11_49_32-am.png",
+      "slug": "Velora-dark-chocolate-packaging",
+      "featured": false,
+      "typography": [
+        {
+          "font_name": "Bebas Neue Regular",
+          "role": "Branding"
+        },
+        {
+          "font_name": "Inter",
+          "role": "Ingredients"
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#1a1715",
+          "label": "DEEP BROWN ( COFFEE)"
+        },
+        {
+          "hex": "#b58a57",
+          "label": "Cream"
+        }
+      ],
+      "goal": "The challenge was to organize a significant amount of product and nutritional information without compromising the premium visual appearance of the packaging.",
+      "service": "Packaging Design",
+      "title": "VELORA Dark Chocolate Packaging Design",
+      "tools": [
+        "Adobe Illustrator",
+        "Adobe Photoshop"
+      ],
+      "description": "A premium dark chocolate packaging design developed around a sophisticated black-and-gold visual identity.",
+      "category": "Packaging Design"
     }
   ]
 }
